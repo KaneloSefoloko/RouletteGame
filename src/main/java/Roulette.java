@@ -11,7 +11,7 @@ public class Roulette {
     public static void main (String[] args) throws IOException, InterruptedException {
         Scanner input = new Scanner(System.in);
         Random random = new Random();
-        int betChoice;
+        int betChoice, number;
         double amountToBet = 0;
         String numberType = null;
 
@@ -25,9 +25,19 @@ public class Roulette {
         nameList.forEach(System.out::println);
 
         for (String name : nameList) {
-            betChoice = input.nextInt();
-            amountToBet = input.nextDouble();
+            betChoice = -1;
+            while (betChoice < 0 || betChoice > 2) {
+                betChoice = input.nextInt();
+            }
 
+            amountToBet = input.nextDouble();
+            number = 0;
+
+            if (betChoice == 2) {
+                while (number < 1 || number > 36) {
+                    number = input.nextInt();
+                }
+            }
 
             if (betChoice % 2 == 0 && name.equalsIgnoreCase(BARBARA)) {
                 numberType = "Even";
