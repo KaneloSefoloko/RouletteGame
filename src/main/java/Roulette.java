@@ -41,13 +41,10 @@ public class Roulette {
             }
 
             // Generate random number in range 0 to 36
-            TimerReader timerReader = new TimerReader();
+            Thread.sleep(30000);
+            int rand_int1 = random.nextInt(37);
+            System.out.println(rand_int1);
 
-            while (true) {
-                Thread.currentThread().sleep(30000);
-                int rand_int1 = random.nextInt(37);
-                System.out.println(rand_int1);
-            }
         }
 
 
