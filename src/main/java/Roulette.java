@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Roulette {
 
-    public static void main (String[] args) throws IOException {
+    public static void main (String[] args) throws IOException, InterruptedException {
         Scanner input = new Scanner(System.in);
         Random random = new Random();
         int betChoice;
@@ -41,8 +41,13 @@ public class Roulette {
             }
 
             // Generate random number in range 0 to 36
-            int rand_int1 = random.nextInt(37);
-            System.out.println(rand_int1);
+            TimerReader timerReader = new TimerReader();
+
+            while (true) {
+                Thread.currentThread().sleep(30000);
+                int rand_int1 = random.nextInt(37);
+                System.out.println(rand_int1);
+            }
         }
 
 
